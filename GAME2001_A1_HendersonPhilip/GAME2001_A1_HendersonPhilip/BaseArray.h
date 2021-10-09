@@ -111,6 +111,7 @@ public:
 		m_array = temp;
 		temp = nullptr;
 
+		m_growSize *= 2;
 		m_maxSize += m_growSize;
 
 		return true;

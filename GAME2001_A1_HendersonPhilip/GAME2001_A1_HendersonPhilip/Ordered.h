@@ -7,7 +7,7 @@ class OrderedArray : public BaseArray<T>
 {
 public:
 	// Constructor
-	OrderedArray(int size, int growBy = 1) {}
+	OrderedArray(int size, int growBy = 1, bool dup = false) {}
 	// Destructor
 	~OrderedArray() {}
 	// Insertion -- Big-O = O(N)
@@ -85,24 +85,6 @@ public:
 		}
 
 		return -1;	// Catch all return from danger.
-	}
-	// Gets and Sets
-	int GetSize()
-	{
-		return m_numElements;
-	}
-	int GetMaxSize()
-	{
-		return m_maxSize;
-	}
-	int GetGrowSize()
-	{
-		return m_growSize;
-	}
-	int SetGrowSize(int val)
-	{
-		assert(val >= 0);
-		m_growSize = val;
 	}
 private:
 	// Private Variables

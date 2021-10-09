@@ -7,7 +7,10 @@ class UnorderedArray : public BaseArray<T>
 {
 public:
 	// Constructor
-	UnorderedArray(int size, int growBy = 1) {}
+	UnorderedArray(int size, int growBy = 1) 
+	{
+		growBy *= 2;
+	}
 	// Destructor
 	~UnorderedArray() {}
 	// Insertion
