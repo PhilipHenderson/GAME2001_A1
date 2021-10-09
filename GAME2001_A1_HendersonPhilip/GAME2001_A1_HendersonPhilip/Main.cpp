@@ -15,14 +15,13 @@ int main()
 {
 	cout << "Binary Search" << endl;
 
-	OrderedArray<int> array(5);
+	BaseArray<int> array(5, 2);
 
-	array.push(80);
 	array.push(45);
-	array.push(23);
+	array.push(62);
+	array.push(76);
+	array.push(98);
 	array.push(12);
-	array.push(89);
-
 
 	cout << "Befor: ";
 	for (int i = 0; i < array.GetSize(); i++)
@@ -32,6 +31,7 @@ int main()
 	cout << endl;
 
 	 /*call sort*/
+
 
 	cout << "After: ";
 	for (int i = 0; i < array.GetSize(); i++)
