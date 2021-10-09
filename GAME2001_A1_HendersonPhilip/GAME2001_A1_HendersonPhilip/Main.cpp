@@ -24,7 +24,8 @@ int main()
 {
 	cout << "Reducing the total number of elements by 1. Ignoring the last element." << endl;
 
-	OrderedArray<int> array(5);
+	UnorderedArray<int> array(5);
+
 	array.push(80);
 	array.push(45);
 	array.push(23);
@@ -40,7 +41,7 @@ int main()
 	cout << endl;
 
 	 /*call sort*/
-	
+	array.BubbleSort();
 
 	cout << "After: ";
 	for (int i = 0; i < array.GetSize(); i++)

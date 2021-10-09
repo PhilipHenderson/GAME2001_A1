@@ -7,18 +7,9 @@ class OrderedArray : public BaseArray<T>
 {
 public:
 	// Constructor
-	OrderedArray(int size, int growBy = 1) :
-		BaseArray<T>::m_array, BaseArray<T>::m_maxSize, BaseArray<T>::m_growSize, BaseArray<T>::m_numElements
-
+	OrderedArray(int size, int growBy = 1) {}
 	// Destructor
-	~OrderedArray()
-	{
-		if (m_array != nullptr)
-		{
-			delete[] m_array;
-			m_array = nullptr;
-		}
-	}
+	~OrderedArray() {}
 	// Insertion -- Big-O = O(N)
 	void push(T val)
 	{
@@ -26,7 +17,7 @@ public:
 
 		if (m_numElements >= m_maxSize)
 		{
-			Expand();
+			BaseArray<T>::Expand();
 		}
 
 		int i, k;	// i - Index to be inserted. k - Used for shifting purposes
@@ -51,32 +42,6 @@ public:
 		m_numElements++;
 
 		// return i;
-	}
-	bool Expand()
-	{
-		if (m_growSize <= 0)
-		{
-			// LEAVE!
-			return false;
-		}
-
-		// Create the new array
-		T* temp = new T[m_maxSize + m_growSize];
-		assert(temp != nullptr);
-
-		// Copy the contents of the original array into the new array
-		memcpy(temp, m_array, sizeof(T) * m_maxSize);
-
-		// Delete the old array
-		delete[] m_array;
-
-		// Clean up variable assignments
-		m_array = temp;
-		temp = nullptr;
-
-		m_maxSize += m_growSize;
-
-		return true;
 	}
 	// Searching
 	// Binary Search
